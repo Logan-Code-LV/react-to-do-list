@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useItems } from "../hooks/index.js"
+import "../styles/Items.css"
 
 export default props => {
   const { items, add, del, toggle } = useItems()
@@ -14,28 +15,32 @@ export default props => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          onChange={e => setItem(e.target.value)}
-          placeholder="Work"
-          value={item}
-        />
-        <button type="submit">Add</button>
-      </form>
-      <ul>
-        {items.map(item => (
-          <li
-            key={"item" + item.id}
-            className={item.status === "completed" ? "completed" : ""}
-            onClick={e => toggle(item.id)}
-          >
-            <input type="checkbox" />
-            {item.text} <button onClick={e => del(item.id)}>X</button>
-          </li>
-        ))}
-      </ul>
+    <div className="container">
+      <div className="form">
+        <form onSubmit={handleSubmit}>
+          <input
+            id="taskbox"
+            type="text"
+            onChange={e => setItem(e.target.value)}
+            placeholder="Insert to-do items ..."
+            value={item}
+          />
+        </form>
+      </div>
+      <div className="everything">
+        <ul className="list">
+          {items.map(item => (
+            <li
+              key={"item" + item.id}
+              className={item.status === "completed" ? "completed" : ""}
+              onClick={e => toggle(item.id)}
+            >
+              <input className="checkbox" type="checkbox" />
+              {item.text} <button onClick={e => del(item.id)}>X</button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }

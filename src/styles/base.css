@@ -21,12 +21,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-li {
-  cursor: pointer;
-  list-style-type: none;
-}
-
-.completed {
-  text-decoration: line-through;
-}
