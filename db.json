@@ -1,13 +1,8 @@
 {
   "items": [
     {
-      "text": "Go to the gym",
-      "status": "active",
-      "id": 1
-    },
-    {
       "text": "Buy grocceries",
-      "status": "active",
+      "status": "completed",
       "id": 2
     },
     {
@@ -21,9 +16,14 @@
       "id": 4
     },
     {
-      "text": "Watch a movie",
+      "text": "Go to the gym",
       "status": "active",
       "id": 5
+    },
+    {
+      "text": "Visit Grandma",
+      "status": "active",
+      "id": 6
     }
   ]
 }
